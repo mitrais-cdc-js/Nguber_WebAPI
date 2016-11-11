@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using NguberData.Models
+
+@inject SignInManager<ApplicationUser> signInManager
+
+<ul class="nav navbar-nav">
+    @if (signInManager.IsSignedIn(User)) {
+      <li><a asp-area="" asp-controller="Home" asp-action="Index">Dashboard</a></li>
+      <li><a asp-area="" asp-controller="Members" asp-action="Index">Members</a></li>
+      <li><a asp-area="" asp-controller="Drivers" asp-action="Index">Drivers</a></li>
+    }
+  else {
+    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+  }
+</ul>
+

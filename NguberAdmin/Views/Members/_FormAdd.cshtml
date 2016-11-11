@@ -1,0 +1,42 @@
+﻿@using NguberAdmin.Models.MemberViewModels
+@model AddViewModel
+
+<div class="form-group">
+  <label asp-for="NguberNumber" class="col-md-4 control-label"></label>
+  <div class="col-md-8">
+    <input asp-for="NguberNumber" disabled class="form-control">
+    <span asp-validation-for="NguberNumber" class="help-block"></span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label asp-for="UserName" class="col-md-4 control-label"></label>
+  <div class="col-md-8">
+    <input asp-for="UserName" placeholder="E-mail" class="form-control">
+    <span asp-validation-for="UserName" class="help-block"></span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label asp-for="NameFirst" class="col-md-4 control-label">Name</label>
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-6">
+        <input asp-for="NameFirst" placeholder="First Name" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <input asp-for="NameLast" placeholder="Last Name" class="form-control">
+      </div>
+    </div>
+    <span asp-validation-for="NameFirst" class="help-block"></span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label asp-for="Credit" class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <input asp-for="Credit" class="form-control text-right">
+    <span asp-validation-for="Credit" class="help-block"></span>
+  </div>
+</div>
+

@@ -1,0 +1,48 @@
+﻿@using NguberAdmin.Models.MemberViewModels
+@model IndexViewModel
+
+@{
+  ViewData["Title"] = "Members";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+
+</div>
+
+<div class="table-responsive">
+  <table class="table table-condensed table-striped table-hover" style="font-size:80%;">
+    <thead>
+      <tr>
+        <th>Nguber Number</th>
+        <th>user Name</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th class="text-right">Credit(s)</th>
+        <th class="text-right">
+          <a asp-area="" asp-action="Add">ADD</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (Model.Members != null) {
+        @foreach (var member in Model.Members) {
+          <tr>
+            <td>@member.ApplicationUser.NguberNumber</td>
+            <td>@member.ApplicationUser.UserName</td>
+            <td>@string.Format("{0} {1}", member.ApplicationUser.NameFirst, member.ApplicationUser.NameLast).Trim()</td>
+            <td>@member.ApplicationUser.NormalizedEmail</td>
+            <td class="text-right">@member.Credit.ToString("#,0.00")<span class="pull-left">Rp.</span></td>
+            <td class="text-right">
+              <a asp-area="" asp asp-action="Detail" asp-route-Id="@member.ApplicationUser.Id">DTL</a>
+              | <a asp-area="" asp asp-action="Edit" asp-route-Id="@member.ApplicationUser.Id">EDT</a>
+              | <a asp-area="" asp asp-action="Remove" asp-route-Id="@member.ApplicationUser.Id">RMV</a>
+            </td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>
+

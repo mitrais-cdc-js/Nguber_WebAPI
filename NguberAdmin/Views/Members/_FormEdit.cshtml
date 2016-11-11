@@ -1,0 +1,44 @@
+﻿@using NguberData.Models
+@model Member
+
+<input type="hidden" asp-for="RowVersion" />
+
+<div class="form-group">
+  <label asp-for="ApplicationUser.NguberNumber" class="col-md-4 control-label"></label>
+  <div class="col-md-8">
+    <input asp-for="ApplicationUser.NguberNumber" readonly class="form-control">
+    <span asp-validation-for="ApplicationUser.NguberNumber" class="help-block"></span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label asp-for="ApplicationUser.UserName" class="col-md-4 control-label"></label>
+  <div class="col-md-8">
+    <input asp-for="ApplicationUser.UserName" placeholder="E-mail" class="form-control">
+    <span asp-validation-for="ApplicationUser.UserName" class="help-block"></span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label asp-for="ApplicationUser.NameFirst" class="col-md-4 control-label">Name</label>
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-6">
+        <input asp-for="ApplicationUser.NameFirst" placeholder="First Name" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <input asp-for="ApplicationUser.NameLast" placeholder="Last Name" class="form-control">
+      </div>
+    </div>
+    <span asp-validation-for="ApplicationUser.NameFirst" class="help-block"></span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label asp-for="Credit" class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <input asp-for="Credit" class="form-control text-right">
+    <span asp-validation-for="Credit" class="help-block"></span>
+  </div>
+</div>
+
